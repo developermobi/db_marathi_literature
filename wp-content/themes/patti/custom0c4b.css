@@ -1,21 +1,21 @@
 /**/
 
 html, body{
-	    background-color: #90d3e8 !Important;
+        background-color: #90d3e8 !Important;
 }
 
 header#header {
     background: transparent !Important;
-	    position: relative;
+        position: relative;
     top: 0 !Important;
-	    padding: 10px 0 0 0 !important;
+        padding: 10px 0 0 0 !important;
 }
 
 html ul#mainnav li a {
     padding: 0 10px;
     margin: 0;
-	    position: relative;
-		font-weight: bold !Important;
+        position: relative;
+        font-weight: bold !Important;
 }
 
 ul#mainnav > li {
@@ -26,9 +26,9 @@ ul#mainnav > li {
     background: #c30c13;
     color: #fff;
     padding: 5px 0;
-	    float: left;
+        float: left;
     width: 100%;
-	    margin-top:10px;
+        margin-top:10px;
 }
 
 .eventinfo span {
@@ -43,7 +43,7 @@ body {
     background-image: url(../../../assets/images/back1-1.png) !important;
     background-color: #fdf670 !important;
     background-size: 100% auto !Important;
-	    background-repeat: repeat-x !Important;
+        background-repeat: repeat-x !Important;
 }
 
 ul#social li a {
@@ -66,7 +66,7 @@ ul#social li a i {
 ul#mainnav {
     margin-top: 50px;
     padding: 0;
-	    margin-bottom: -5px;
+        margin-bottom: -5px;
 }
 
 div#wrapper, #footer {
@@ -147,14 +147,14 @@ html ul#mainnav li a:after {content: " ";position: absolute;bottom: 0;left: 50%;
     top: 0;
     background-color: #c30c13;
     color: #Fff;
-	    transition: all 0.5s, opacity 2s;
+        transition: all 0.5s, opacity 2s;
     opacity: 0;
 }
 
 .scrolled-header .stickhead {
     max-height: 50px;
-	 padding: 8px 0;
-	  opacity: 1;
+     padding: 8px 0;
+      opacity: 1;
 }
 
 body.admin-bar .stickhead {
@@ -163,7 +163,7 @@ body.admin-bar .stickhead {
 
 #stickynav #stickymainnav {
     margin-top: 0;
-	    float: right;
+        float: right;
 }
 
 ul#stickymainnav li a {
@@ -179,7 +179,7 @@ ul#stickymainnav li a {
 
 .speakerrow .wpb_single_image img:hover {
       padding: 0;
-	      margin-bottom: -2px;
+          margin-bottom: -2px;
 }
 
 .speakerrow .wpb_single_image img {
@@ -233,7 +233,7 @@ ul#stickymainnav li a {
 }
 
 .hideit{
-	display:none !important;
+    display:none !important;
 }
 
 iframe#twitter-widget-0 {
@@ -242,13 +242,13 @@ iframe#twitter-widget-0 {
 
 #socialrow {
     background: #e4c515;
-	padding-top: 20px !Important;
+    padding-top: 20px !Important;
 }
 
 #formcont input, #formcont textarea {
     background-color: #fff;
     padding: 8px 15px;
-	    border-radius: 4px;
+        border-radius: 4px;
 }
 
 #formcont input[type=submit] {
@@ -258,7 +258,7 @@ iframe#twitter-widget-0 {
     background-color: #e4c515;
     color: #fff !Important;
     font-weight: bold;
-	    width: 100%;
+        width: 100%;
 }
 
 .shead.center {
@@ -300,8 +300,8 @@ background-image: url(../../../assets/images/speakercollage.jpg);
     padding: 60px 0;
     position: relative;
    /* background-attachment: fixed;*/
-	    margin-bottom: 60px;
-		    z-index: 800;
+        margin-bottom: 60px;
+            z-index: 800;
 }
 
 .pagetitlebar:before {content: " ";position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: #fdf67059;}
@@ -381,9 +381,9 @@ span.eventheadline:after {
 .speakerbox {
     float: left;
     width: 100%;
-	  position: relative;
+      position: relative;
     padding: 0;
-	margin-bottom:25px !Important;
+    margin-bottom:25px !Important;
 }
 
 
