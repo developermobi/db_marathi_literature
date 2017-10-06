@@ -426,6 +426,7 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
     /* ]]> */
 </script>
 <script type='text/javascript' src='../wp-content/themes/patti/js/google-analytics5152.js?ver=1.0'></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>                                    </script>
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -441,7 +442,7 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 
             $.ajax({
                 type: "post",
-                url: "sendmail.php",
+                url: "../sendmail.php",
                 data: {
                     fname:fname,
                     lname:lname,
