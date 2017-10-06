@@ -112,7 +112,7 @@ html ul#mainnav li a:after {content: " ";position: absolute;bottom: 0;left: 50%;
 }
 
 #wrapper {
-    background-image: url(../../../assets/images/back-1.png) !important;
+   /* background-image: url(../../../assets/images/back-1.png) !important;*/
 }
 
 .menu-fixer {
