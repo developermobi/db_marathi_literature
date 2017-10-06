@@ -23,7 +23,7 @@ ul#mainnav > li {
 }
 
 .infobar {
-    background: #c30c13;
+    background: #da7039;
     color: #fff;
     padding: 5px 0;
         float: left;
@@ -40,7 +40,7 @@ ul#mainnav > li {
 }
 
 body {
-    background-image: url(../../../assets/images/back1-1.png) !important;
+    background-image: url(../../../assets/images/back1-1.jpg) !important;
     background-color: #fdf670 !important;
     background-size: 100% auto !Important;
         background-repeat: repeat-x !Important;
@@ -145,7 +145,7 @@ html ul#mainnav li a:after {content: " ";position: absolute;bottom: 0;left: 50%;
     width: 100%;
     position: fixed;
     top: 0;
-    background-color: #c30c13;
+    background-color: #da7039;
     color: #Fff;
         transition: all 0.5s, opacity 2s;
     opacity: 0;
@@ -315,7 +315,7 @@ background-image: url(../../../assets/images/speakercollage.jpg);
 }
 
 .page-title-subtitle h2 {
-    color: #c30c13;
+    color: #da7039;
     font-weight: bold;
 }
 
