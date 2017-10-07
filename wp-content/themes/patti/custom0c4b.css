@@ -41,7 +41,7 @@ ul#mainnav > li {
 
 body {
     background-image: url(../../../assets/images/back1-1.png) !important;
-    background-color: #fdf670 !important;
+    background-color: #e5ece5 !important;
     background-size: 100% auto !Important;
         background-repeat: repeat-x !Important;
 }
@@ -241,7 +241,7 @@ iframe#twitter-widget-0 {
 }
 
 #socialrow {
-    background: #e4c515;
+    background: #a8afa8;
     padding-top: 20px !Important;
 }
 
@@ -360,7 +360,7 @@ span.eventheadline:after {
     padding: 10px;
     font-size: 13px;
     line-height: 15px;
-    background-color: rgba(202, 192, 11, 0.73);
+    background-color: rgba(70, 63, 59, 0.73);
     width: 100%;
     box-sizing: border-box;
     left: 0;
@@ -425,7 +425,7 @@ span.eventheadline:after {
     color: #000;
     padding: 10px;
     display:inline-block;
-    background-color: rgba(253, 251, 117, 0.71);
+    background-color: rgba(255, 255, 255, 0.71);
 }
 
 @media only screen and (max-width: 500px) {
