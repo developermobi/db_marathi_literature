@@ -1,8 +1,8 @@
 /**/
 
-html, body{
+/*html, body{
         background-color: #90d3e8 !Important;
-}
+}*/
 
 header#header {
     background: transparent !Important;
@@ -40,7 +40,7 @@ ul#mainnav > li {
 }
 
 body {
-    background-image: url(../../../assets/images/back1-1.jpg) !important;
+    background-image: url(../../../assets/images/back1-1.png) !important;
     background-color: #fdf670 !important;
     background-size: 100% auto !Important;
         background-repeat: repeat-x !Important;
@@ -112,7 +112,7 @@ html ul#mainnav li a:after {content: " ";position: absolute;bottom: 0;left: 50%;
 }
 
 #wrapper {
-    background-image: url(../../../assets/images/back-1.png) !important;
+   /* background-image: url(../../../assets/images/back-1.png) !important;*/
 }
 
 .menu-fixer {
@@ -418,4 +418,20 @@ span.eventheadline:after {
     font-weight: bold;
     font-size: 1.2em;
     color: #555;
+}
+
+.abcd{
+    font-size: 42px;
+    color: #000;
+    padding: 10px;
+    display:inline-block;
+    background-color: rgba(253, 251, 117, 0.71);
+}
+
+@media only screen and (max-width: 500px) {
+    .scrolled-header .stickhead {
+        max-height: 130px;
+        padding: 8px 0;
+        opacity: 1;
+    }
 }
