@@ -104,7 +104,7 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
     <meta name="generator" content="Powered by Slider Revolution 5.2.5 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
     <style type="text/css" title="dynamic-css" class="options-output">html body{font-family:Muli;line-height:28px;font-weight:400;font-style:normal;color:#000000;font-size:15px;}html ul#mainnav li a{font-family:Muli;line-height:28px;font-weight:400;font-style:normal;color:#000000;font-size:14px;}.wrap ul.wrap-nav > li a{font-family:"Open Sans";line-height:32px;font-weight:400;font-style:normal;color:#ffffff;font-size:28px;}html h1{font-family:"Open Sans";line-height:36px;font-weight:700;font-style:normal;color:#444444;font-size:28px;}html h2{font-family:"Open Sans";line-height:32px;font-weight:300;font-style:normal;color:#444444;font-size:24px;}html h3{font-family:"Open Sans";line-height:24px;font-weight:300;font-style:normal;color:#444444;font-size:18px;}html h4{font-family:"Open Sans";line-height:22px;font-weight:300;font-style:normal;color:#444444;font-size:16px;}html h5{font-family:"Open Sans";line-height:20px;font-weight:300;font-style:normal;color:#444444;font-size:14px;}html h6{font-family:"Open Sans";line-height:20px;font-weight:300;font-style:normal;color:#444444;font-size:13px;}</style>
     <style type="text/css" data-type="vc_custom-css">.pagetitlebar {
-        background-image: url(../../avilporwal.com/MLF/wp-content/uploads/2016/11/speakercollage.jpg);
+       /* background-image: url(../wp-content/uploads/2016/11/speakercollage.jpg);*/
         background-size: auto 100%;
         background-attachment: initial;
     }
@@ -114,25 +114,25 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 </noscript>
 <script>
     jQuery(document).ready(function() {
-        
+
         if(jQuery('.axgmap').length){
             var mapleft = jQuery('.axgmap').offset().left;
             jQuery('.axgmap').css('margin-left',-mapleft);
             jQuery('.axgmap').width(jQuery('.axgmap').width()+(mapleft*2));
         }
-        
+
         jQuery('.speakerbox').each(function(){
            var speakerboxwidth = jQuery(this).outerWidth();
            jQuery(this).height(speakerboxwidth*(7/5));
        });
-        
+
         var logonum = 6;
         if(screen.width<720)
            logonum = 4;
        if(screen.width<520)
            logonum = 2;
-       
-       
+
+
        jQuery('.bxslider').bxSlider({
           minSlides: 2,
           maxSlides: 6,
@@ -143,7 +143,7 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
           pager:false,
           moveSlides: 1,
       });
-       
+
        jQuery('.bxslider1').bxSlider({
           minSlides: 2,
           maxSlides: 4,
@@ -154,13 +154,13 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
           pager:false,
           moveSlides: 1,
       });
-       
+
    });
-    
-    
-    
-    
-    
+
+
+
+
+
 </script>		
 </head>
 <body class="page page-id-12 page-template-default wpb-js-composer js-comp-ver-4.11.2.1 vc_responsive">
@@ -241,13 +241,13 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
     </header>
     <div id="wrapper">
         <div class="menu-fixer"></div>
-        <div class="pagetitlebar">
-            <div class="centered-wrapper">
-                <div class="page-title-subtitle">
-                    <h2>Speakers</h2>
+         <div class="pagetitlebar">
+                <div class="centered-wrapper">
+                    <div class="page-title-subtitle">
+                        <span class="abcd">Speakers</span>
+                    </div>
                 </div>
             </div>
-        </div>
         <div class="centered-wrapper">
             <section class="percent-page no-sidebar">
                 <article id="page-12" class="begin-content">
