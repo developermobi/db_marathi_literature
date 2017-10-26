@@ -93,7 +93,7 @@ function send_admin_mail($mailContent){
 	$mail->isHTML(true);
 	$mail->Subject = $subject;
 	$mail->MsgHTML($mailContent);
-	$mail->AddAddress('prajwal.p@mobisofttech.co.in');
+	$mail->AddAddress('mlf@dbcorp.in');
 
 	if(!$mail->Send()){
 		return json_encode("Mailer Error: " . $mail->ErrorInfo);
