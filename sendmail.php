@@ -55,7 +55,7 @@ $html_body = '<html lang="en">
 </table>
 </body>';
 
-$mail_sent_admin = send_admin_mail($html_body);	
+$mail_sent_admin = send_admin_mail($html_body,$mobile,$fname,$lname);	
 
 if($mail_sent_admin == 1){		
 	$data = array();
@@ -72,7 +72,7 @@ echo json_encode($data, true);
 
 
 
-function send_admin_mail($mailContent){ 
+function send_admin_mail($mailContent,$mobile,$fname,$lname){ 
 
 	$subject = "Marathi Literature Festival";
 	date_default_timezone_set('Asia/Calcutta');

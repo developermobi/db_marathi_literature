@@ -300,11 +300,11 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 												<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f4-p6-o1" />
 												<input type="hidden" name="_wpnonce" value="e068203244" />
 											</div>
-											<div class="vc_col-md-6"><span class="wpcf7-form-control-wrap your-fname"><input type="text" name="fname" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="First Name" id="fname" /></span> </div>
+											<div class="vc_col-md-6"><span class="wpcf7-form-control-wrap your-fname"><input type="text" name="fname" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="First Name*" id="fname" /></span> </div>
 											<div class="vc_col-md-6"><span class="wpcf7-form-control-wrap your-lname"><input type="text" name="lname" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Last Name" id="lname" /></span> </div>
-											<div class="vc_col-md-6"><span class="wpcf7-form-control-wrap your-email"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email id" id="email" /></span> </div>
-											<div class="vc_col-md-6"><span class="wpcf7-form-control-wrap your-contact"><input type="text" name="mobile" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Contact number" id="mobile" /></span> </div>
-											<div class="vc_col-md-12"><span class="wpcf7-form-control-wrap your-message"><textarea name="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Message" id="message"></textarea></span> </div>
+											<div class="vc_col-md-6"><span class="wpcf7-form-control-wrap your-email"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email id*" id="email" /></span> </div>
+											<div class="vc_col-md-6"><span class="wpcf7-form-control-wrap your-contact"><input type="text" name="mobile" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Contact number*" id="mobile" /></span> </div>
+											<div class="vc_col-md-12"><span class="wpcf7-form-control-wrap your-message"><textarea name="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Message*" id="message"></textarea></span> </div>
 											<div class="vc_col-md-3"><a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-rounded vc_btn3-style-flat vc_btn3-color-warning" onclick="sendMail()" title="" id="send_button" style="padding: 15px 60px;">Send</a></div>
 											<div class="wpcf7-response-output wpcf7-display-none"></div>
 										</form>
@@ -473,39 +473,166 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
     <![endif]-->	
     <script type="text/javascript">
     	function sendMail(){
-    		var fname= jQuery("#fname").val();
-    		var lname= jQuery("#lname").val();
-    		var email= jQuery("#email").val();
-    		var mobile= jQuery("#mobile").val();
-    		var message= jQuery("#message").val();
+                //alert('msg');
+                var fname= jQuery("#fname").val();
+                var lname= jQuery("#lname").val();
+                var email= jQuery("#email").val();
+                var mobile= jQuery("#mobile").val();
+                var message= jQuery("#message").val();
 
-    		$.ajax({
-    			type: "post",
-    			url: "../sendmail.php",
-    			data: {
-    				fname:fname,
-    				lname:lname,
-    				email:email,
-    				mobile:mobile,
-    				message:message,
-    			},
-    			dataType: "json",
-    			beforeSend: function() {
-    				$("#send_button").prop('disabled', true).text('Please Wait...');
-    			},
-    			success: function(response){
-    				if(response.code == 1){
-    					swal("Success!", "Form submitted Successfully!", "success");
-    					jQuery('#contact_form').trigger("reset");
-    				}else{
-    					swal("Failed!", "Something went wrong while submitting form. Please try again.", "error");
-    				}
-    			},
-    			complete:function(){
-    				$("#send_button").prop('disabled', false).text('Send');
-    			}
-    		});
-    	}
-    </script>
-</body>
+                if(jQuery("#contact_form").find('.error').length != 0){
+			        //alert("Not allowed");
+			        return false;
+			    }   
+
+			    if(fname == ''){
+			    	jQuery('span.error-keyup-fname').remove();
+			    	jQuery('span.required-error').remove();
+			    	jQuery('span.last-error').remove();
+			    	jQuery("#fname").after('<span class="error error-keyup-fname">Please enter first name.</span>');
+			    	return false;
+			    }
+
+			    if(email == ''){
+			    	jQuery('span.error-keyup-email').remove();
+			    	jQuery('span.required-error').remove();
+			    	jQuery('span.last-error').remove();
+			    	jQuery("#email").after('<span class="error error-keyup-email">Please enter email id.</span>');
+			    	return false;
+			    }
+
+			    if(mobile == ''){
+			    	jQuery('span.error-keyup-mobile').remove();
+			    	jQuery('span.required-error').remove();
+			    	jQuery('span.last-error').remove();
+			    	jQuery("#mobile").after('<span class="error error-keyup-mobile">Please enter mobile number.</span>');
+			    	return false;
+			    }
+
+			    if(message == ''){
+			    	jQuery('span.error-keyup-message').remove();
+			    	jQuery('span.required-error').remove();
+			    	jQuery('span.last-error').remove();
+			    	jQuery("#message").after('<span class="error error-keyup-message">Please enter message.</span>');
+			    	return false;
+			    }else{
+			    	jQuery('span.error-keyup-message').remove();
+			    	jQuery('span.required-error').remove();
+			    	jQuery('span.last-error').remove();
+			    }
+
+			    jQuery.ajax({
+			    	type: "post",
+			    	url: "sendmail.php",
+			    	data: {
+			    		fname:fname,
+			    		lname:lname,
+			    		email:email,
+			    		mobile:mobile,
+			    		message:message,
+			    	},
+			    	dataType: "json",
+			    	beforeSend: function() {
+			    		jQuery("#send_button").prop('disabled', true).text('Please Wait...');
+			    	},
+			    	success: function(response){
+			    		if(response.code == 1){
+			    			swal("Success!", "Mail Sent Successfully!", "success");
+			    			jQuery('#contact_form').trigger("reset");
+			    		}else{
+			    			swal("Failed!", "Something went wrong while sending mail. Please try again.", "error");
+			    		}
+			    	},
+			    	complete:function(){
+			    		jQuery("#send_button").prop('disabled', false).text('Send');
+			    	}
+			    });
+			}
+		</script>
+		<script src="assets/js/slick.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			jQuery(document).on('ready', function() {      
+				jQuery(".lazy").slick({
+					lazyLoad: 'ondemand',
+					infinite: true,
+					arrows: false,
+					autoplay: true,
+					dots: true,
+					speed: 500,
+					slidesToShow: 1,
+					fade: true,
+					cssEase: 'linear'
+				});
+			});
+		</script>
+
+		<script type="text/javascript">
+			jQuery('#fname').on('keyup change',function() {
+				jQuery('span.error-keyup-fname').remove();
+				jQuery('span.required-error').remove();
+				jQuery('span.last-error').remove();
+				var inputVal = jQuery(this).val();
+				var characterReg = /^\s*[a-zA-Z0-9,\s]+\s*$/;
+				if(inputVal == ""){
+					jQuery('span.error-keyup-fname').remove();
+				}else if(!characterReg.test(inputVal)) {
+					jQuery(this).after('<span class="error error-keyup-fname">No special characters allowed.</span>');
+				}
+			});
+
+			jQuery('#lname').on('keyup change',function() {
+				jQuery('span.error-keyup-lname').remove();
+				jQuery('span.required-error').remove();
+				jQuery('span.last-error').remove();
+				var inputVal = jQuery(this).val();
+				var characterReg = /^\s*[a-zA-Z0-9,\s]+\s*$/;
+				if(inputVal == ""){
+					jQuery('span.error-keyup-lname').remove();
+				}else if(!characterReg.test(inputVal)) {
+					jQuery(this).after('<span class="error error-keyup-lname">No special characters allowed.</span>');
+				}
+			});
+
+			jQuery('#mobile').on('keyup change',function() {
+				jQuery('span.error-keyup-mobile').remove();
+				jQuery('span.required-error').remove();
+				jQuery('span.last-error').remove();
+				var inputVal = jQuery(this).val();
+				var characterReg = /^\s*[a-zA-Z0-9,\s]+\s*$/;
+				if(inputVal == ""){
+					jQuery('span.error-keyup-mobile').remove();
+				}else if(inputVal.match(/^(\+\d{1,3}[- ]?)?\d{10}$/) && ! (inputVal.match(/0{5,}/)) ) {
+					jQuery('span.error-keyup-mobile').remove();
+				}else{
+					jQuery(this).after('<span class="error error-keyup-mobile">Invalid mobile number.</span>');
+				}
+			});
+
+			jQuery('#email').on('keyup change',function() {
+				jQuery('span.error-keyup-email').remove();
+				jQuery('span.required-error').remove();
+				jQuery('span.last-error').remove();
+				var inputVal = jQuery(this).val();
+				var characterReg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				if(inputVal == ""){
+					jQuery('span.error-keyup-email').remove();
+				}else if(!characterReg.test(inputVal)) {
+					jQuery(this).after('<span class="error error-keyup-email">Invalid Email Id.</span>');
+				}
+			});
+
+		</script>
+	</body>
+	<style>
+	.error {
+		color: #fff;
+		background-color: rgb(230, 92, 92);
+		position: absolute;
+		padding: 5px;
+		border-radius: 3px;
+		z-index: 99;
+		width: 250px;
+		margin-top: -21px;
+	}
+</style>
 </html>

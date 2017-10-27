@@ -207,7 +207,7 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 			logonum = 2;
 		
 		
-		jQuery('.bxslider').bxSlider({
+		var slider = jQuery('.bxslider').bxSlider({
 			minSlides: 2,
 			maxSlides: 6,
 			slideWidth: 175,
@@ -218,100 +218,59 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 			moveSlides: 1,
 		});
 		
-		jQuery('.bxslider1').bxSlider({
+		var slider1 = jQuery('.bxslider1').bxSlider({
 			minSlides: 2,
 			maxSlides: 4,
 			slideWidth: 280,
 			slideMargin: 10,
-			auto:true,infiniteLoop:false,
-			pause:6000,
+			auto:true,//infiniteLoop:false,
+			pause:3000,
 			pager:false,
 			moveSlides: 1,
+			stopAuto: false
+		});
+
+		//alert(slider);
+
+		jQuery(".startBx .bx-next").click(function () {
+
+			console.log('bx-next');            
+			slider.stopAuto();
+			slider.startAuto();
 		});
 		
+		jQuery(".startBx .bx-prev").click(function () {
+
+			console.log('bx-prev');            
+			slider.stopAuto();
+			slider.startAuto();
+		});
+
+		jQuery(".startBx1 .bx-next").click(function () {
+
+			console.log('bx-next1');            
+			slider1.stopAuto();
+			slider1.startAuto();
+		});
+		
+		jQuery(".startBx1 .bx-prev").click(function () {
+
+			console.log('bx-prev1');            
+			slider1.stopAuto();
+			slider1.startAuto();
+		});
 	});
 	
 </script>    
 </head>
 <body class="home page page-id-6 page-template page-template-template-homepage page-template-template-homepage-php wpb-js-composer js-comp-ver-4.11.2.1 vc_responsive">
 	<!-- preloader-->
+	<script type="text/javascript">
+		jQuery(document).on('ready', function() {  
+			jQuery("#header").load('assets/infobar_index.html');
+		});
+	</script>
 	<header id="header" class="transparent-header">
-		<div class="centered-wrapper">
-			<div class="percent-one-fourth no-fullscreen-menu">
-				<div class="logo">
-					<a href="" title="Marathi Literature Festival" rel="home"><img src="wp-content/uploads/2016/11/logo.png" alt="Marathi Literature Festival" /></a>
-				</div>
-				<!--end logo-->
-			</div>
-			<!--end one-fourth-->
-			<a href="../mr" class="vc_general vc_btn3 vc_btn3-size-xs vc_btn3-shape-rounded vc_btn3-style-flat vc_btn3-color-warning marathi-warning" style="float: right; margin-top: -80px; padding: 2px 5px; font-weight: 800;display:none" >मराठी</a>
-			<a class="nav-btn " style=""><i class="fa fa-bars"></i></a>
-			<div class="percent-three-fourth column-last">
-				<span class="lang" style="float: right; margin-top: 0px; font-weight: 800;">
-					<a href="../mr" class="vc_general vc_btn3 vc_btn3-size-xs vc_btn3-shape-rounded vc_btn3-style-flat vc_btn3-color-warning marathi-warning" style="display:none;" >मराठी</a>
-				</span>
-				<div id="regular-navigation">
-					<div class="flags_language_selector "></div>
-				</div>
-				<nav id="navigation" class="light-header">
-					<div class="menu-menu-1-container">
-						<ul id="mainnav" class="sf-menu">
-							<li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6 current_page_item menu-item-29"><a href="">Home</a></li>
-							<li id="menu-item-30" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a href="about-us">About us</a></li>
-							<li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><a href="programme">Programme</a></li>
-							<li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a href="speakers">Speakers</a></li>
-							<li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="sponsors">Sponsors</a></li>
-							<li id="menu-item-355" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-355"><a href="gallery">Gallery</a></li>
-							<li id="menu-item-334" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-334"><a href="media">Media</a></li>
-							<li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><a href="contact-us">Contact us</a></li>
-						</ul>
-					</div>
-				</nav>
-				<!--end navigation--> 
-			</div>
-			<!--end three-fourth-->
-			<div class="clear"></div>
-		</div>
-		<!--end centered-wrapper-->
-		<div class="infobar ">
-			<div class="centered-wrapper">
-				<div class="eventinfo vc_col-md-8">
-					<span><i class="fa fa-calendar" aria-hidden="true"></i>3rd - 5th Nov, 2017</span>
-					<span><i class="fa fa-map-marker" aria-hidden="true"></i>Kusumagraj Smarak, Vishwas Lawns</span>
-					<span><i class="fa fa-envelope" aria-hidden="true"></i>mlf@dbcorp.in</span>
-				</div>
-				<div class="socialinfo vc_col-md-4">
-					Connect with us:
-					<ul id="social">
-						<li><a href="https://www.facebook.com/MarathiLiteratureFestival" title="facebook" class="facebook"  target="_blank"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="https://twitter.com/marathilitfest" title="twitter" class="twitter"  target="_blank"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="https://www.youtube.com/channel/UCCzy0OcHFTCeLqHz72Xfg3Q" title="youtube" class="youtube"  target="_blank"><i class="fa fa-youtube"></i></a></li>
-						<li><a href="https://www.instagram.com/marathiliteraturefestival/" title="instagram" class="instagram"  target="_blank"><i class="fa fa-instagram"></i></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="stickhead">
-			<div class="centered-wrapper">
-				<div class="percent-one-fourth stickytitle">
-					Marathi Literature Festival
-				</div>
-				<nav id="stickynav" class="stickymenu">
-					<div class="menu-menu-1-container">
-						<ul id="stickymainnav" class="sf-menu">
-							<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6 current_page_item menu-item-29"><a href="">Home</a></li>
-							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a href="about-us">About us</a></li>
-							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><a href="programme">Programme</a></li>
-							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a href="speakers">Speakers</a></li>
-							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="sponsors">Sponsors</a></li>
-							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-355"><a href="gallery">Gallery</a></li>
-							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-334"><a href="media">Media</a></li>
-							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><a href="contact-us">Contact us</a></li>
-						</ul>
-					</div>
-				</nav>
-			</div>
-		</div>
 	</header>
 	<div id="wrapper">
 		<div id="hello"></div>
@@ -367,7 +326,7 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 										<p style="text-align: justify;">The first of its kind literary fest in Nasik was organized under the aegis of Divya Marathi from 11th-13th November 2016 with 21 sessions and 54 authors.
 										</p>
 										
-										<p style="text-align: justify;">This year too - The Marathi Literature Festival will be held on 3rd - 5th of November 2017 in Nasik based on the theme 'Confluence of Independent Thinkers‘ with 20 sessions and 45 authors.
+										<p style="text-align: justify;">This year too - The Marathi Literature Festival will be held on 3rd - 5th of November 2017 in Nasik based on the theme 'Confluence of Independent Thinkers‘ with 26 sessions, 5 Workshops and 70 authors.
 										</p>
 
 										<p style="text-align: justify;">The literary festival aims at giving thinkers a platform to people who have dared to think beyond ordinary and express independently. It brings forth diversity as the festival will have a dynamic mix of sessions in English, Hindi and Marathi language,making the experience truly enriching for everyone.
@@ -415,7 +374,7 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 							<div class="wpb_wrapper">
 								<div class="wpb_text_column wpb_content_element ">
 									<div class="wpb_wrapper">
-										<div class="speakerslider">
+										<div class="speakerslider startBx">
 											<ul class="bxslider">
 												<li>
 													<div class="speakerbox"><a href="speaker/devdutt-pattanaik/"><img  src="wp-content/uploads/2016/12/devdutt_pattnaik.png"><span class="speakername">Devdutta Pattanaik</span></a></div>
@@ -499,20 +458,20 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 							<div class="wpb_wrapper">
 								<div class="wpb_text_column wpb_content_element ">
 									<div class="wpb_wrapper">
-										<div class="logoset">
+										<div class="logoset startBx1">
 											<ul class="bxslider1">
-												<li><img  src="wp-content/uploads/2016/13/Express_inn.png"></li>
-												<li><img  src="wp-content/uploads/2016/13/ABP_Manjha.png"></li>
-												<li><img  src="wp-content/uploads/2016/13/kusumagraj.png"></li>
-												<li><img  src="wp-content/uploads/2016/13/Vishwas_Bank.png"></li>
-												<li><img  src="wp-content/uploads/2016/13/Violin.png"></li>
-												<li><img  src="wp-content/uploads/2016/13/Rajhans.png"></li>
-												<li><img  src="wp-content/uploads/2016/13/Vani_Prakashan.png"></li>
-												<li><img  src="wp-content/uploads/2016/13/SRK_Terers.png"></li>
-												<li><img  src="wp-content/uploads/2016/13/Shree_Balaji.png"></li>
-												<li><img  src="wp-content/uploads/2016/13/mobisoft.png"></li>
-												<li><img  src="wp-content/uploads/2016/13/MY_FM.png"></li>
-												<li><img  src="wp-content/uploads/2016/13/Divya_Marathi.png"></li>
+												<li><img src="wp-content/uploads/2016/13/Express_inn.png"></li>
+												<li><img src="wp-content/uploads/2016/13/ABP_Manjha.png"></li>
+												<li><img src="wp-content/uploads/2016/13/kusumagraj.png"></li>
+												<li><img src="wp-content/uploads/2016/13/Vishwas_Bank.png"></li>
+												<li><img src="wp-content/uploads/2016/13/Violin.png"></li>
+												<li><img src="wp-content/uploads/2016/13/Rajhans.png"></li>
+												<li><img src="wp-content/uploads/2016/13/Vani_Prakashan.png"></li>
+												<li><img src="wp-content/uploads/2016/13/SRK_Terers.png"></li>
+												<li><img src="wp-content/uploads/2016/13/mobisoft.png"></li>
+												<li><img src="wp-content/uploads/2016/13/Shree_Balaji.png"></li>
+												<li><img src="wp-content/uploads/2016/13/MY_FM.png"></li>
+												<li><img src="wp-content/uploads/2016/13/Divya_Marathi.png"></li>
 											</ul>
 										</div>
 									</div>
@@ -664,7 +623,7 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 								<h2 style="text-align: left;font-family:Open Sans;font-weight:600;font-style:normal" class="vc_custom_heading shead center">Contact us</h2>
 								<div role="form" class="wpcf7" id="wpcf7-f4-p6-o1" lang="en-US" dir="ltr">
 									<div class="screen-reader-response"></div>
-									<form action="http://marathiliteraturefestival.com/#wpcf7-f4-p6-o1" method="post" class="wpcf7-form demo" novalidate="novalidate" id="contact_form">
+									<form method="post" class="wpcf7-form demo" novalidate="novalidate" id="contact_form">
 										<div style="display: none;">
 											<input type="hidden" name="_wpcf7" value="4" />
 											<input type="hidden" name="_wpcf7_version" value="4.5.1" />
@@ -672,11 +631,11 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 											<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f4-p6-o1" />
 											<input type="hidden" name="_wpnonce" value="e068203244" />
 										</div>
-										<div class="vc_col-md-6"><span class="wpcf7-form-control-wrap your-fname"><input type="text" name="fname" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="First Name" id="fname" /></span> </div>
+										<div class="vc_col-md-6"><span class="wpcf7-form-control-wrap your-fname"><input type="text" name="fname" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="First Name*" id="fname" /></span> </div>
 										<div class="vc_col-md-6"><span class="wpcf7-form-control-wrap your-lname"><input type="text" name="lname" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Last Name" id="lname" /></span> </div>
-										<div class="vc_col-md-6"><span class="wpcf7-form-control-wrap your-email"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email id" id="email" /></span> </div>
-										<div class="vc_col-md-6"><span class="wpcf7-form-control-wrap your-contact"><input type="text" name="mobile" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Contact number" id="mobile" /></span> </div>
-										<div class="vc_col-md-12"><span class="wpcf7-form-control-wrap your-message"><textarea name="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Message" id="message"></textarea></span> </div>
+										<div class="vc_col-md-6"><span class="wpcf7-form-control-wrap your-email"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email id*" id="email" /></span> </div>
+										<div class="vc_col-md-6"><span class="wpcf7-form-control-wrap your-contact"><input type="text" name="mobile" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Contact number*" id="mobile" /></span> </div>
+										<div class="vc_col-md-12"><span class="wpcf7-form-control-wrap your-message"><textarea name="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Message*" id="message"></textarea></span> </div>
 										<div class="vc_col-md-3"><a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-rounded vc_btn3-style-flat vc_btn3-color-warning gujarati-warning" onclick="sendMail()" title="" id="send_button" style="padding: 15px 60px;">Send</a></div>
 										<div class="wpcf7-response-output wpcf7-display-none"></div>
 									</form>
@@ -807,50 +766,160 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
                 var email= jQuery("#email").val();
                 var mobile= jQuery("#mobile").val();
                 var message= jQuery("#message").val();
-                
-                jQuery.ajax({
-                	type: "post",
-                	url: "sendmail.php",
-                	data: {
-                		fname:fname,
-                		lname:lname,
-                		email:email,
-                		mobile:mobile,
-                		message:message,
-                	},
-                	dataType: "json",
-                	beforeSend: function() {
-                		jQuery("#send_button").prop('disabled', true).text('Please Wait...');
-                	},
-                	success: function(response){
-                		if(response.code == 1){
-                			swal("Success!", "Mail Sent Successfully!", "success");
-                			jQuery('#contact_form').trigger("reset");
-                		}else{
-                			swal("Failed!", "Something went wrong while sending mail. Please try again.", "error");
-                		}
-                	},
-                	complete:function(){
-                		jQuery("#send_button").prop('disabled', false).text('Send');
-                	}
-                });
-            }
-        </script>
-        <script src="assets/js/slick.js" type="text/javascript" charset="utf-8"></script>
-        <script type="text/javascript">
-        	jQuery(document).on('ready', function() {      
-        		jQuery(".lazy").slick({
-            lazyLoad: 'ondemand', // ondemand progressive anticipated
-            infinite: true,
-            arrows: false,
-            autoplay: true,
-            dots: true,
-            speed: 500,
-            slidesToShow: 1,
-            fade: true,
-            cssEase: 'linear'
-        });
-        	});
-        </script>
-    </body>
-    </html>
+
+                if(jQuery("#contact_form").find('.error').length != 0){
+			        //alert("Not allowed");
+			        return false;
+			    }   
+
+			    if(fname == ''){
+			    	jQuery('span.error-keyup-fname').remove();
+			    	jQuery('span.required-error').remove();
+			    	jQuery('span.last-error').remove();
+			    	jQuery("#fname").after('<span class="error error-keyup-fname">Please enter first name.</span>');
+			    	return false;
+			    }
+
+			    if(email == ''){
+			    	jQuery('span.error-keyup-email').remove();
+			    	jQuery('span.required-error').remove();
+			    	jQuery('span.last-error').remove();
+			    	jQuery("#email").after('<span class="error error-keyup-email">Please enter email id.</span>');
+			    	return false;
+			    }
+
+			    if(mobile == ''){
+			    	jQuery('span.error-keyup-mobile').remove();
+			    	jQuery('span.required-error').remove();
+			    	jQuery('span.last-error').remove();
+			    	jQuery("#mobile").after('<span class="error error-keyup-mobile">Please enter mobile number.</span>');
+			    	return false;
+			    }
+
+			    if(message == ''){
+			    	jQuery('span.error-keyup-message').remove();
+			    	jQuery('span.required-error').remove();
+			    	jQuery('span.last-error').remove();
+			    	jQuery("#message").after('<span class="error error-keyup-message">Please enter message.</span>');
+			    	return false;
+			    }else{
+			    	jQuery('span.error-keyup-message').remove();
+			    	jQuery('span.required-error').remove();
+			    	jQuery('span.last-error').remove();
+			    }
+
+			    jQuery.ajax({
+			    	type: "post",
+			    	url: "sendmail.php",
+			    	data: {
+			    		fname:fname,
+			    		lname:lname,
+			    		email:email,
+			    		mobile:mobile,
+			    		message:message,
+			    	},
+			    	dataType: "json",
+			    	beforeSend: function() {
+			    		jQuery("#send_button").prop('disabled', true).text('Please Wait...');
+			    	},
+			    	success: function(response){
+			    		if(response.code == 1){
+			    			swal("Success!", "Mail Sent Successfully!", "success");
+			    			jQuery('#contact_form').trigger("reset");
+			    		}else{
+			    			swal("Failed!", "Something went wrong while sending mail. Please try again.", "error");
+			    		}
+			    	},
+			    	complete:function(){
+			    		jQuery("#send_button").prop('disabled', false).text('Send');
+			    	}
+			    });
+			}
+		</script>
+		<script src="assets/js/slick.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			jQuery(document).on('ready', function() {      
+				jQuery(".lazy").slick({
+					lazyLoad: 'ondemand',
+					infinite: true,
+					arrows: false,
+					autoplay: true,
+					dots: true,
+					speed: 500,
+					slidesToShow: 1,
+					fade: true,
+					cssEase: 'linear'
+				});
+			});
+		</script>
+
+		<script type="text/javascript">
+			jQuery('#fname').on('keyup change',function() {
+				jQuery('span.error-keyup-fname').remove();
+				jQuery('span.required-error').remove();
+				jQuery('span.last-error').remove();
+				var inputVal = jQuery(this).val();
+				var characterReg = /^\s*[a-zA-Z0-9,\s]+\s*$/;
+				if(inputVal == ""){
+					jQuery('span.error-keyup-fname').remove();
+				}else if(!characterReg.test(inputVal)) {
+					jQuery(this).after('<span class="error error-keyup-fname">No special characters allowed.</span>');
+				}
+			});
+
+			jQuery('#lname').on('keyup change',function() {
+				jQuery('span.error-keyup-lname').remove();
+				jQuery('span.required-error').remove();
+				jQuery('span.last-error').remove();
+				var inputVal = jQuery(this).val();
+				var characterReg = /^\s*[a-zA-Z0-9,\s]+\s*$/;
+				if(inputVal == ""){
+					jQuery('span.error-keyup-lname').remove();
+				}else if(!characterReg.test(inputVal)) {
+					jQuery(this).after('<span class="error error-keyup-lname">No special characters allowed.</span>');
+				}
+			});
+
+			jQuery('#mobile').on('keyup change',function() {
+				jQuery('span.error-keyup-mobile').remove();
+				jQuery('span.required-error').remove();
+				jQuery('span.last-error').remove();
+				var inputVal = jQuery(this).val();
+				var characterReg = /^\s*[a-zA-Z0-9,\s]+\s*$/;
+				if(inputVal == ""){
+					jQuery('span.error-keyup-mobile').remove();
+				}else if(inputVal.match(/^(\+\d{1,3}[- ]?)?\d{10}$/) && ! (inputVal.match(/0{5,}/)) ) {
+					jQuery('span.error-keyup-mobile').remove();
+				}else{
+					jQuery(this).after('<span class="error error-keyup-mobile">Invalid mobile number.</span>');
+				}
+			});
+
+			jQuery('#email').on('keyup change',function() {
+				jQuery('span.error-keyup-email').remove();
+				jQuery('span.required-error').remove();
+				jQuery('span.last-error').remove();
+				var inputVal = jQuery(this).val();
+				var characterReg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				if(inputVal == ""){
+					jQuery('span.error-keyup-email').remove();
+				}else if(!characterReg.test(inputVal)) {
+					jQuery(this).after('<span class="error error-keyup-email">Invalid Email Id.</span>');
+				}
+			});
+
+		</script>
+	</body>
+	<style>
+	.error {
+		color: #fff;
+		background-color: rgb(230, 92, 92);
+		position: absolute;
+		padding: 5px;
+		border-radius: 3px;
+		z-index: 99;
+		width: 250px;
+		margin-top: -21px;
+	}
+</style>
+</html>

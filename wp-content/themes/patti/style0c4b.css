@@ -2276,7 +2276,7 @@ html .testimonial-item em {
 
 a[rel="PrettyPhoto"] {
 	overflow:hidden;
-	display:block;
+	/*display:block;*/
 }
 
 #testimonials {
