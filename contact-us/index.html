@@ -51,6 +51,7 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 .single-post .page-title-subtitle { display: none; }.single-post .post-single { border-top: 1px solid #efefef; padding-top: 60px; }
 #header { padding-top: 0px; padding-bottom: 0px;  }
 </style>
+
 <link rel='stylesheet' id='dt-prettyphoto-lightbox-css'  href='../wp-content/themes/patti/css/prettyPhoto0c4b.css?ver=4.6.7' type='text/css' media='all' />
 <link rel='stylesheet' id='dt-superfish-css'  href='../wp-content/themes/patti/css/superfish0c4b.css?ver=4.6.7' type='text/css' media='all' />
 <link rel='stylesheet' id='dt-font-awesome-css'  href='../wp-content/themes/patti/framework/fonts/font-awesome/css/font-awesome0c4b.css?ver=4.6.7' type='text/css' media='all' />
@@ -78,6 +79,8 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 	var dt_styles = {"header_bg":"255,255,255","header_scroll_opacity":"90","default_color":"#ffffff","logo_width":"373","logo_height":"80","init_pt":"0","init_pb":"0","scroll_pt":"0","scroll_pb":"0","scrolling_effect":"1","mainlogosrc":"http:\/\/marathiliteraturefestival.com\/wp-content\/uploads\/2016\/11\/logo.png","alternativelogosrc":"","alternativelogo":"0"};
 	/* ]]> */
 </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox.min.js"></script>
 <script type='text/javascript' src='../wp-content/themes/patti/js/custom/custom-navscroll5152.js?ver=1.0'></script>
 <link rel='https://api.w.org/' href='../wp-json/' />
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
@@ -226,9 +229,9 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 		<div class="infobar ">
 			<div class="centered-wrapper">
 				<div class="eventinfo vc_col-md-8">
-					<span><i class="fa fa-calendar" aria-hidden="true"></i>3rd - 5th Nov, 2017</span>
-					<span><i class="fa fa-map-marker" aria-hidden="true"></i>Kusumagraj Smarak, Vishwas Lawns</span>
-					<span><i class="fa fa-envelope" aria-hidden="true"></i>mlf@dbcorp.in</span>
+					<span> <a href="../wp-content/uploads/2016/11/schedule_calendar.jpg" data-lightbox="image-1" style="color: #fff;"><i class="fa fa-calendar" aria-hidden="true"></i></a> 3rd - 5th Nov, 2017</span>
+					<span><a href="https://www.google.com/maps/place/Kusumagraj+Smarak/@20.010597,73.76741,14z/data=!4m5!3m4!1s0x0:0x70b834872e127969!8m2!3d20.010597!4d73.76741?hl=en-US" style="color: #fff;" target="_BLANK"><i class="fa fa-map-marker" aria-hidden="true"></i>Kusumagraj Smarak</a>&nbsp;&nbsp;  <a href="https://www.google.com/maps/place/Vishwas+Lawns/@20.020496,73.75181,14z/data=!4m5!3m4!1s0x0:0xd6095f9443519c11!8m2!3d20.0204962!4d73.7518098?hl=en-US" style="color: #fff;" target="_BLANK"><i class="fa fa-map-marker" aria-hidden="true"></i>Vishwas Lawns</a></span>
+					<span><a href="mailto: mlf@dbcorp.in" style="color: #fff;"><i class="fa fa-envelope" aria-hidden="true"></i>mlf@dbcorp.in</a></span>
 				</div>
 				<div class="socialinfo vc_col-md-4">
 					Connect with us:
@@ -621,6 +624,12 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 				}
 			});
 
+		</script>
+		<script>
+			lightbox.option({
+				'resizeDuration': 200,
+				'wrapAround': true
+			});
 		</script>
 	</body>
 	<style>
