@@ -59,6 +59,8 @@ img.emoji {
 <link rel='stylesheet' id='sb_instagram_styles-css'  href='../wp-content/plugins/instagram-feed/css/sb-instagram.minb493.css?ver=1.4.8' type='text/css' media='all' />
 <link rel='stylesheet' id='sb_instagram_icons-css'  href='../../maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min4698.css?ver=4.6.3' type='text/css' media='all' />
 <link rel='stylesheet' id='rs-plugin-settings-css'  href='../wp-content/plugins/revslider/public/assets/css/settings6619.css?ver=5.2.5' type='text/css' media='all' />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <style id='rs-plugin-settings-inline-css' type='text/css'>
 #rs-demo-id {}
 </style>
@@ -113,6 +115,7 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 }
 </style>
 <meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress."/>
+
         <!--[if lte IE 9]>
         <link rel="stylesheet" type="text/css" href="http://marathiliteraturefestival.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen">
         <![endif]--><!--[if IE  8]>
@@ -178,6 +181,13 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 
     	gtag('config', 'UA-108812669-1');
     </script>
+
+    <!-- <style type="text/css">
+        .image-class img{
+            height: 250px;
+            width: 100%;
+        }
+    </style> -->
     
 </head>
 <body class="page page-id-14 page-template-default wpb-js-composer js-comp-ver-4.11.2.1 vc_responsive">
@@ -189,6 +199,30 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 		<script type="text/javascript">
 			jQuery(document).on('ready', function() {  
 				jQuery("#header").load('../assets/infobar.html');
+
+                var folder = "http://marathiliteraturefestival.com/en/mlf_crm/mlf/gallery/";
+
+                jQuery.ajax({
+                    url : folder,
+                    success: function (data) {
+
+                        jQuery(data).find("a").attr("href", function (i, val) {
+                            if( val.match(/\.(jpe?g|png|gif)$/) ) { 
+                                jQuery('.coming_soon').hide();
+                                var name = val.split('.');
+                                //jQuery("body").append( "<img src='"+ folder + val +"'>" );
+                                var html_image = '';
+                                html_image = '<div class="col-md-3" style="height: 200px !important;">'
+                                                   +'<a href="'+folder+val+'" data-lightbox="roadtrip"> <img src="'+folder+'medium/'+val+'" class="img-rounded img-responsive" alt="Cinque Terre" ></a>'
+                                                   +'<center><b><h3 style="font-weight: 600;">'+name[0].replace("%20", " ")+'</h3></b></center>'
+                                                +'</div>';
+
+                                jQuery(".gallery_images").append( html_image );
+                                //console.log("data val: ",val);
+                            } 
+                        });
+                    }
+                });
 			});
 		</script>
 		<header id="header" class="transparent-header">
@@ -211,10 +245,20 @@ html body {background: #efefef;}#wrapper {background: #ffffff;}#header {backgrou
 								<div class="vc_column-inner ">
 									<div class="wpb_wrapper">
 										<!-- vc_grid start -->
-                                        <!-- <div class="vc_grid-container-wrapper vc_clearfix">
-                                            <div class="vc_grid-container vc_clearfix wpb_content_element vc_media_grid" data-initial-loading-animation="fadeInUp" data-vc-grid-settings="{&quot;page_id&quot;:14,&quot;style&quot;:&quot;lazy&quot;,&quot;action&quot;:&quot;vc_get_vc_grid_data&quot;,&quot;shortcode_id&quot;:&quot;1479217561071-99b85955-2d95-3&quot;,&quot;items_per_page&quot;:&quot;9&quot;,&quot;tag&quot;:&quot;vc_media_grid&quot;}" data-vc-request="http://marathiliteraturefestival.com/wp-admin/admin-ajax.php" data-vc-post-id="14" data-vc-public-nonce="74f70515f1">
+                                        <div class="row image-class gallery_images">
+                                            <!-- <div class="col-md-3">
+                                               <a href="http://lokeshdhakar.com/projects/lightbox2/images/thumb-6.jpg" data-lightbox="roadtrip"> <img src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-6.jpg" class="img-rounded img-responsive" alt="Cinque Terre" ></a>
                                             </div>
-                                        </div> -->
+                                            <div class="col-md-3">
+                                               <a href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg" data-lightbox="roadtrip"> <img src="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg" class="img-rounded img-responsive" alt="Cinque Terre" ></a>
+                                            </div>
+                                            <div class="col-md-3">
+                                               <a href="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg" data-lightbox="roadtrip"> <img src="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg" class="img-rounded img-responsive" alt="Cinque Terre" ></a>
+                                            </div>
+                                            <div class="col-md-3">
+                                               <a href="http://lokeshdhakar.com/projects/lightbox2/images/image-5.jpg" data-lightbox="roadtrip"> <img src="http://lokeshdhakar.com/projects/lightbox2/images/image-5.jpg" class="img-rounded img-responsive" alt="Cinque Terre" ></a>
+                                            </div> -->
+                                        </div>
                                         <!-- vc_grid end -->
                                         <center>
                                         	<span class="coming_soon">

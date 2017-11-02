@@ -21,9 +21,6 @@ $html_body = '<html lang="en">
 </style>
 </head>
 <body>
-<div class="table-title">
-<h3>Data Table</h3>
-</div>
 <table class="table-fill">
 <thead>
 <tr>
@@ -55,22 +52,10 @@ $html_body = '<html lang="en">
 </table>
 </body>';
 
-$mail_sent_admin = send_admin_mail($html_body,$mobile,$fname,$lname);	
 
-if($mail_sent_admin == 1){		
-	$data = array();
-	$data['status'] = 'success';
-	$data['code'] = '1';
-	$data['message'] = 'Mail sent successfully.';
-}else{
-	$data = array();
-	$data['status'] = 'failed';
-	$data['code'] = '0';
-	$data['message'] = 'Message sending failled';
-}
-echo json_encode($data, true);
+$single_body = "Dear " .$fname. ",<br><br> Thank you for your interrest in Marathi Literature Festival. We'll get back to you soon.<br><br>Thank You<br><br>.";
 
-
+$mail_sent_admin = send_admin_mail($html_body,$mobile,$fname,$lname);
 
 function send_admin_mail($mailContent,$mobile,$fname,$lname){ 
 
@@ -99,6 +84,54 @@ function send_admin_mail($mailContent,$mobile,$fname,$lname){
 	$msgbody=urlencode($msgbody);
 	$smsUrl="http://makemysms.in/api/sendsms.php?username=longcode&password=mGRLc6F0&sender=DBCORP&mobile=".$mobile."&type=1&message=".$msgbody;
 	file_get_contents($smsUrl);
+
+	if(!$mail->Send()){
+		return json_encode("Mailer Error: " . $mail->ErrorInfo);
+	}else{
+		return 1;
+	}        
+	$mail->ClearAddresses(); 
+}
+
+
+if($mail_sent_admin == 1){		
+	$data = array();
+	$data['status'] = 'success';
+	$data['code'] = '1';
+	$data['message'] = 'Mail sent successfully.';
+}else{
+	$data = array();
+	$data['status'] = 'failed';
+	$data['code'] = '0';
+	$data['message'] = 'Message sending failled';
+}
+echo json_encode($data, true);
+
+send_single_mail($email,$subject,$single_body);	
+
+function send_single_mail($user_email,$subject,$mailContent){ 
+
+	$subject = "Marathi Literature Festival";
+
+	date_default_timezone_set('Asia/Calcutta');
+	
+	$mail = new PHPMailer();
+	$mail->IsSMTP();
+	$mail->SMTPDebug = 1;
+	$mail->SMTPAuth = true; 
+	$mail->SMTPSecure = 'ssl'; 
+	$mail->Host = "smtp.gmail.com";
+	$mail->Port = 465;
+	$mail->IsHTML(true);
+
+	$mail->Username = "asmitahospitality1@gmail.com";
+	$mail->Password = "click@123";
+	$mail->setFrom('mlf@dbcorp.in', 'Marathi Literature Festival'); 
+
+	$mail->isHTML(true);
+	$mail->Subject = $subject;
+	$mail->MsgHTML($mailContent);
+	$mail->AddAddress($user_email);
 
 	if(!$mail->Send()){
 		return json_encode("Mailer Error: " . $mail->ErrorInfo);
